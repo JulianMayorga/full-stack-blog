@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+const apiUrl = process.env.API_URL ? process.env.API_URL : window.__API_URL__;
+
 export const FETCH_POSTS = 'FETCH_POSTS';
 export const FETCH_POSTS_SUCCESS = 'FETCH_POSTS_SUCCESS';
 export const FETCH_POSTS_FAILURE = 'FETCH_POSTS_FAILURE';
@@ -22,11 +24,12 @@ export const fetchPostsFailure = err => {
   };
 };
 
+
 export const fetchPosts = dispatch => {
   dispatch({
     type: FETCH_POSTS
   });
-  return axios(`http://localhost:3030/posts`) // eslint-disable-line
+  return axios(`${apiUrl}/posts`) // eslint-disable-line
     .then(res => dispatch(fetchPostsSuccess(res)))
     .catch(err => dispatch(fetchPostsFailure(err)));
 };
@@ -50,7 +53,7 @@ export const createPost = post => dispatch => {
     type: CREATE_POST,
     post
   });
-  return axios.post(`http://localhost:3030/posts`, post) // eslint-disable-line
+  return axios.post(`${apiUrl}/posts`, post) // eslint-disable-line
     .then(res => dispatch(createPostSuccess(res)))
     .catch(err => dispatch(createPostFailure(err)));
 };

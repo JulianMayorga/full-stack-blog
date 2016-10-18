@@ -3,7 +3,7 @@ import Router from 'react-router/lib/Router';
 import browserHistory from 'react-router/lib/browserHistory';
 import routes from '../routes';
 
-import { Provider } from 'react-redux';
+import { Provider } from 'react-redux-lodash-fix-fork';
 import { createStore } from 'redux';
 import combinedReducers from '../reducers';
 

@@ -11,7 +11,7 @@ import template from './template';
 import routes from '../routes';
 
 import { createStore } from 'redux';
-import { Provider } from 'react-redux';
+import { Provider } from 'react-redux-lodash-fix-fork';
 import combinedReducers from '../reducers';
 
 const clientAssets = require(KYT.ASSETS_MANIFEST); // eslint-disable-line import/no-dynamic-require
@@ -39,17 +39,19 @@ app.get('*', (request, response) => {
       // Initial app state can be passed in here
       const initialState = {};
       const store = createStore(combinedReducers, initialState);
+      console.log(process.env.API_URL);
       // When a React Router route is matched then we render
       // the components and assets into the template.
       response.status(200).send(template({
         root: renderToString(
-            <Provider store={store}>
-                <RouterContext {...renderProps} />
-            </Provider>
+          <Provider store={store}>
+            <RouterContext {...renderProps} />
+          </Provider>
         ),
         initialStore: store.getState(),
         jsBundle: clientAssets.main.js,
         cssBundle: clientAssets.main.css,
+        apiUrl: process.env.API_URL
       }));
     } else {
       response.status(404).send('Not found');

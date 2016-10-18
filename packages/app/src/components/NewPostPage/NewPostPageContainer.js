@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+import { connect } from 'react-redux-lodash-fix-fork';
 import { withRouter } from 'react-router';
 
 import NewPostPage from './NewPostPage';

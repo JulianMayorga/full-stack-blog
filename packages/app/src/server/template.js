@@ -24,7 +24,8 @@ export default vo => `
   <body>
     <div id="root"><div>${vo.root}</div></div>
     <script>
-        window.__PRELOADED_STATE__ = ${JSON.stringify(vo.initialStore)}
+        window.__PRELOADED_STATE__ = ${JSON.stringify(vo.initialStore)};
+        window.__API_URL__ = ${JSON.stringify(vo.apiUrl)};
     </script>
     <script src="${vo.jsBundle}"></script>
   </body>

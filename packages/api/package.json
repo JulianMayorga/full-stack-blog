@@ -8,8 +8,9 @@
     "full-stack-blog-api": "api.js"
   },
   "scripts": {
-    "start": "PORT=3030 node ./bin/api.js",
-    "dev": "NODE_ENV=development PORT=3030 node_modules/.bin/nodemon ./bin/api.js"
+    "start": "node ./bin/api.js",
+    "dev": "NODE_ENV=development PORT=3030 node_modules/.bin/nodemon ./bin/api.js",
+    "deploy": "node_modules/.bin/now -e MONGODB_URI=@mongodb_uri -e PORT=3030"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +22,10 @@
     "mongoose": "^4.6.3"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "now": "^0.25.1"
+  },
+  "engines": {
+    "node": "6.8.0"
   }
 }
