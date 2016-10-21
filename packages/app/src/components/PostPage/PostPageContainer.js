@@ -1,4 +1,4 @@
-import { connect } from 'react-redux-lodash-fix-fork';
+import { connect } from 'react-redux';
 
 import PostPage from './PostPage';
 

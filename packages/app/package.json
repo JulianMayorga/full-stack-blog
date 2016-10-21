@@ -23,6 +23,7 @@
     "axios": "^0.15.1",
     "classnames": "^2.2.5",
     "compression": "^1.6.2",
+    "electrode-redux-router-engine": "^1.2.2",
     "enzyme": "^2.4.1",
     "express": "^4.14.0",
     "kyt": "^0.2.2",
@@ -31,7 +32,7 @@
     "react": "^15.3.0",
     "react-addons-test-utils": "^15.3.0",
     "react-dom": "^15.3.0",
-    "react-redux-lodash-fix-fork": "*",
+    "react-redux": "^4.4.5",
     "react-router": "^2.6.1",
     "react-router-transition": "0.0.6",
     "redux": "^3.6.0"
