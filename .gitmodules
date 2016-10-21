@@ -1,3 +1,6 @@
 [submodule "packages/app"]
 	path = packages/app
 	url = https://github.com/JulianMayorga/full-stack-blog-app
+[submodule "packages/api"]
+	path = packages/api
+	url = https://github.com/JulianMayorga/full-stack-blog-api
